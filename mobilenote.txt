@@ -1,0 +1,29 @@
+python -m pip install Frida python -m pip install objection python -m pip install frida-tools
+
+Or
+
+pip install Frida
+pip install objection
+pip install frida-tools
+
+adb push <path_of_frida_server_folder><space></data/local/tmp>
+
+adb pull /data/data/com.vnpay.abbank/files/data.dat %HOME%\Desktop\log.txt  
+
+adb shell /data/local/tmp/frida-server &
+
+frida -U -f com.rnsmartrm -l frida-android-repinning.js --no-paus
+
+
+adb shell am start -n com.vnpay.abbank/com.vnpay.vntalk.activity.CustomGalleryActivity
+
+
+adb shell am broadcast -a com.whereismywifeserver.intent.TEST --es sms_body "test from adb" -n com.whereismywifeserver/.IntentReceiver
+adb shell am broadcast -n package/.Receiver
+-a action
+-es truyen gia tri + tham so
+-n truyen component
+
+
+jnitrace -l libnative-lib.so com.example.myapplication
+
