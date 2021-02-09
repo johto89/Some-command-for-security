@@ -43,7 +43,6 @@
    </head>
    
    <body>
-      <h3> Hacked by johto robbie </h3>
       
       <form runat="server">
          <input runat="server" id="mytext" type="text" />
