@@ -1,0 +1,111 @@
+Function Vul(validate user input):	
+	⋗  wp_kses_bad_protocol
+	⋗  wpdb->query
+	⋗  wpdb->get_var
+	⋗  wpdb->get_row
+	⋗  wpdb->get_col
+	⋗  wpdb->get_results
+	⋗  wpdb->replace
+	⋗  esc_sql
+	⋗  escape
+	⋗  esc_like
+	⋗  like_escape
+	⋗  is_admin ===> does not check if the user is authenticated as administrator, only checks if page displayed is in the admin section, can lead to auth bypass if misused.
+	⋗  is_user_admin ===> does not check if the user is authenticated as administrator, only checks if page displayed is in the admin section, can lead to auth bypass if misused.
+	⋗  current_user_can ===> used for checking authorisation. This is what should be used to check authorisation.
+	⋗  add_action( 'wp_ajax_nopriv_ ===> permits non-authenticated users to use the AJAX function
+	⋗  wp_redirect ===> function can be used to redirect to user supplied URLs. If user input is not sanitised or validated this could lead to Open Redirect vulnerabilities.
+	⋗  wp_nonce_field ===> adds CSRF token to forms
+	⋗  wp_verify_nonce ===> checks the CSRF token validity server side
+	⋗  check_admin_referer ===> checks the CSRF token validity server side and came from admin screen
+	⋗  CURLOPT_SSL_VERIFYHOST ===> if set to 0 then does not check name in host certificate
+	⋗  CURLOPT_SSL_VERIFYPEER ===> if set to FALSE then does not check if the certificate (inc chain), is trusted. A Man-in-the-Middle (MitM) attacker could use a self-signed certificate.
+	⋗  update_option ===> if user input is sent unvalidated, it could allow an attacker to update arbitrary WordPress options.
+	⋗  do_action ===> if user input is sent unvalidated, it could allow an attacker to update arbitrary WordPress actions
+	⋗  random
+	⋗  inputstream, fileoutputstream ==> put function into try..catch
+	⋗  strncpy, memcpy, printf, strlen, sscanf, fopen
+	⋗  mysql_real_escape_string
+	⋗  addslashes
+	⋗  string.Format
+	⋗  disable_functions
+	⋗  callock ==> malloc is safe
+	⋗  match_at
+	⋗  _php_iconv_mime_decode
+	⋗  phar_create_or_parse_filename
+	⋗  ftp_getrc_msg
+	⋗  phar_detect_phar_fname_ext
+	⋗  php_wddx_push_element
+	⋗  php_unicode_tolower_full
+	⋗  phar_parse_pharfile
+	⋗  smtp_command_parse_parameters
+	⋗  efree
+	⋗  HTMLInputElement
+	⋗  HTMLEncode
+	⋗  dangerouslySetInnerHTML ==> reactjs + xss
+	⋗  fs.realpath.native
+	⋗  merge() ==> angularjs + xss
+	⋗ json.stringify
+	⋗ actionpack-page_caching ==> ruby gem, RCE
+	⋗ Curl_http_compile_trailers ===> double free
+	⋗ SOCK_RAW sockets ===> SOCK_RAW sockets reachable from Webkit process allows triggering double free in IP6_EXTHDR_CHECK
+	⋗ header_append ===> Integer overlow in "header_append" function
+	
+Displaying/hiding SQL errors(validate user input):	
+	⋗  <?php $wpdb->show_errors(); ?> 
+	⋗  <?php $wpdb->hide_errors(); ?> 
+	⋗  <?php $wpdb->print_error(); ?>
+	
+Command Execution(validate user input):	
+	⋗  system()
+	⋗  exec()
+	⋗  passthru()
+	⋗  shell_exec()
+	
+PHP Code Execution(validate user input):	
+	⋗  eval()
+	⋗  assert()
+	⋗  preg_replace() ===> dangerous "e" flag deprecated since PHP >= 5.5.0 and removed in PHP >= 7.0.0.
+	
+Android Manifest (do not use options):	
+	⋗  debuggable
+	⋗  allowBackup
+	⋗  cleartext
+	⋗  DOWNLOAD_WITHOUT_NOTIFICATION
+	⋗  SYSTEM_ALERT_WINDOW
+	⋗  BIND_ACCESSIBILITY_SERVICE 
+	
+Mobile WebViews (do not use functions):	
+	⋗  setWebContentsDebuggingEnabled(true)
+	⋗  clearCache(true)
+	⋗  EnableSafeBrowsing
+	⋗  addJavascriptInterface
+	
+iOS plist info (do not use option):	
+	⋗  NSAllowsArbitraryLoads
+	⋗  NSExceptionAllowsInsecureHTTPLoads
+	⋗  NSAllowsArbitraryLoadsForMedia
+	⋗  NSAllowsArbitraryLoadsInWebContent
+	⋗  NSExceptionAllowsInsecureHTTPLoads
+	⋗  NSExceptionMinimumTLSVersion
+	
+	
+Default File(store version):	
+	⋗  md, log, txt
+	⋗  license, readme
+	
+Lib Vul(out of date version): version from js file	
+	
+Debug(store sensitive information):	
+	⋗  console.log
+	⋗  log.error
+	⋗  printStackTrace
+	
+Encrypt(do not use cipher suite):	
+	⋗  md5, sha1, base64
+	⋗  hashcode
+	⋗  http://
+	⋗  cbc mode
+	
+Configuration:	
+	⋗  localstorage   ===> do not store token, sensitive information
