@@ -23,13 +23,13 @@ Function Vul(validate user input):
 	⋗  update_option ===> if user input is sent unvalidated, it could allow an attacker to update arbitrary WordPress options.
 	⋗  do_action ===> if user input is sent unvalidated, it could allow an attacker to update arbitrary WordPress actions
 	⋗  random
-	⋗  inputstream, fileoutputstream ==> put function into try..catch
+	⋗  inputstream, fileoutputstream ===> put function into try..catch
 	⋗  strncpy, memcpy, printf, strlen, sscanf, fopen
 	⋗  mysql_real_escape_string
 	⋗  addslashes
 	⋗  string.Format
 	⋗  disable_functions
-	⋗  callock ==> malloc is safe
+	⋗  callock ===> malloc is safe
 	⋗  match_at
 	⋗  _php_iconv_mime_decode
 	⋗  phar_create_or_parse_filename
@@ -42,11 +42,13 @@ Function Vul(validate user input):
 	⋗  efree
 	⋗  HTMLInputElement
 	⋗  HTMLEncode
-	⋗  dangerouslySetInnerHTML ==> reactjs + xss
+	⋗  jQuery.htmlPrefilter
+	⋗  dangerouslySetInnerHTML ===> reactjs + xss
 	⋗  fs.realpath.native
-	⋗  merge() ==> angularjs + xss
+	⋗  merge() ===> angularjs + xss
 	⋗ json.stringify
-	⋗ actionpack-page_caching ==> ruby gem, RCE
+	⋗ redirect_to ===> ruby gem, RCE
+	⋗ actionpack-page_caching ===> ruby gem, RCE
 	⋗ Curl_http_compile_trailers ===> double free
 	⋗ SOCK_RAW sockets ===> SOCK_RAW sockets reachable from Webkit process allows triggering double free in IP6_EXTHDR_CHECK
 	⋗ header_append ===> Integer overlow in "header_append" function
@@ -100,6 +102,7 @@ Debug(store sensitive information):
 	⋗  console.log
 	⋗  log.error
 	⋗  printStackTrace
+	⋗  elmah.axd ===> Adjust web.config to deny access to this entity without proper authorization.
 	
 Encrypt(do not use cipher suite):	
 	⋗  md5, sha1, base64
