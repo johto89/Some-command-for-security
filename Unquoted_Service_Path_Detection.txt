@@ -1,6 +1,6 @@
 # Step to discover Unquoted Service Path:
 
-C:\> wmic service get name, displayname, pathname, startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\" | findstr  /i "program_vul"
+C:\> wmic service get name, displayname, pathname, startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\" | findstr /i /v """
 program_vul           program_vul           program_vul_path                    Auto
 
 # Service info
