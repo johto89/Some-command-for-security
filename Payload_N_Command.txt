@@ -124,6 +124,20 @@ Best Temporary mailbox (Updates)🔰
 ➖ https://M.kuku.lu
 
 
+*Some Rate Limit Bypass Headers* :
+
+X-Originating-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Remote-Addr: 127.0.0.1
+X-Forwarded-Host : 127.0.0.1
+X-Client-IP : 127.0.0.1
+X-Host : 127.0.0.1
+Forwarded: 127.0.0.1
+X-Forwarded-By: 127.0.0.1
+X-Forwarded-For-IP: 127.0.0.1
+X-True-IP: 127.0.0.1
+
 
 curl -v -H “Authorization: Bearer <jwt_token>” https://<master_ip>:<port>/api/v1/namespaces/default/pods/
 /default/secrets/
