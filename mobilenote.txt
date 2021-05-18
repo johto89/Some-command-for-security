@@ -21,8 +21,8 @@ adb shell am start -n com.vnpay.abbank/com.vnpay.vntalk.activity.CustomGalleryAc
 adb shell am broadcast -a com.whereismywifeserver.intent.TEST --es sms_body "test from adb" -n com.whereismywifeserver/.IntentReceiver
 adb shell am broadcast -n package/.Receiver
 -a action
--es truyen gia tri + tham so
--n truyen component
+-es value + param
+-n need component
 
 
 jnitrace -l libnative-lib.so com.example.myapplication
