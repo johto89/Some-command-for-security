@@ -18,6 +18,12 @@ Turn off defender - Set-MpPreference -DisableRealtimeMonitoring $false
 
 python2 -m SimpleHTTPServer + port(default 8000)
 python3 -m http.server + port(default 8000)
+
+dnscmd <ServerName> /Config /NoRecursion {1|0}
+q5MmE8;2X'877q=g9MjzfB@4NAZ[Nw8K
+RD /S /Q %SystemDrive%\windows.old 
+
+$env:Path += ";C:\Python27\Scripts"
 ```
 
 ### Open-source intelligence (OSINT)
@@ -84,12 +90,6 @@ findomain -t http://testphp.vulnweb.com -q | httpx -silent | anew | waybackurls 
 - https://services.normshield.com
 - https://joe.black/leakengine.html
 - https://www.social-searcher.com/
-
-dnscmd <ServerName> /Config /NoRecursion {1|0}
-q5MmE8;2X'877q=g9MjzfB@4NAZ[Nw8K
-RD /S /Q %SystemDrive%\windows.old 
-
-$env:Path += ";C:\Python27\Scripts"
 
 ### Search Book
 - https://b-ok.org/
