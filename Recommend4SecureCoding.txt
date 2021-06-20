@@ -52,6 +52,7 @@ Function Vul(validate user input):
 	⋗ Curl_http_compile_trailers ===> double free
 	⋗ SOCK_RAW sockets ===> SOCK_RAW sockets reachable from Webkit process allows triggering double free in IP6_EXTHDR_CHECK
 	⋗ header_append ===> Integer overlow in "header_append" function
+	⋗ node-serialize ===> Node.JS - 'node-serialize' Remote Code Execution
 	
 Displaying/hiding SQL errors(validate user input):	
 	⋗  <?php $wpdb->show_errors(); ?> 
