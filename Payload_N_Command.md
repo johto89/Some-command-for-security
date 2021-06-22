@@ -19,6 +19,8 @@ Turn off defender - Set-MpPreference -DisableRealtimeMonitoring $false
 python2 -m SimpleHTTPServer + port(default 8000)
 python3 -m http.server + port(default 8000)
 
+pip3 install -r ./requirements.txt
+
 dnscmd <ServerName> /Config /NoRecursion {1|0}
 q5MmE8;2X'877q=g9MjzfB@4NAZ[Nw8K
 RD /S /Q %SystemDrive%\windows.old 
