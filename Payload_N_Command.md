@@ -4,10 +4,12 @@
 - https://www.virustotal.com/gui/
 - https://packettotal.com/
 
-### update all package with pip
+### Update all package with pip
 - Windows
 ```
 pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+or
+pip3 list --outdated --format=freeze | ForEach { pip3 install -U $_.split(" ")[0] }
 ```
 - Linux
 ```
