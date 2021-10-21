@@ -27,3 +27,4 @@ adb shell am broadcast -n package/.Receiver
 
 jnitrace -l libnative-lib.so com.example.myapplication
 
+cat backup.ab | ( dd bs=24 count=0 skip=1; cat) | zlib-flate-uncompress > backup.tar
