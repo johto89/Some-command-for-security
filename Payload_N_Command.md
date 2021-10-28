@@ -78,6 +78,8 @@ wget -nv -nc https://chaos-data.projectdiscovery.io/playstation.zip ; unzip http
 wget https://chaos-data.projectdiscovery.io/lime.zip -nv ; unzip http://lime.zip ; cat *.txt >> lime.txt ; cat lime.txt | httpx -silent -threads 200 | gau -subs -retries 2| anew | rush -j 3 'jaeles scan -s /jaeles-signatures/ -u {}'
 
 findomain -t http://testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+
+gobuster -e -u http://<IPADDRESS:PORT> -w <WORDLIST> -c PHPSESSID=<COOKIESTRING>
 ```
 
 --link--
