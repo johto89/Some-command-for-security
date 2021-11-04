@@ -4,6 +4,9 @@
 - https://www.virustotal.com/gui/
 - https://packettotal.com/
 
+### sort unique
+gc infile.txt | sort | get-unique > outfile.txt
+
 ### Update all package with pip
 - Windows
 ```
