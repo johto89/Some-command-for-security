@@ -15,7 +15,7 @@ adb shell /data/local/tmp/frida-server &
 frida -U -f com.rnsmartrm -l frida-android-repinning.js --no-paus
 
 
-adb shell am start -n com.vnpay.abbank/com.vnpay.vntalk.activity.CustomGalleryActivity
+adb shell am start -n com.vnpay.abbank/com.activity.App
 
 
 adb shell am broadcast -a com.whereismywifeserver.intent.TEST --es sms_body "test from adb" -n com.whereismywifeserver/.IntentReceiver
