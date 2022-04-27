@@ -8,17 +8,17 @@ pip install frida-tools
 
 adb push <path_of_frida_server_folder><space></data/local/tmp>
 
-adb pull /data/data/com.vnpay.abbank/files/data.dat %HOME%\Desktop\log.txt  
+adb pull /data/data/com.example.myapplication/files/data.dat %HOME%\Desktop\log.txt  
 
 adb shell /data/local/tmp/frida-server &
 
-frida -U -f com.rnsmartrm -l frida-android-repinning.js --no-paus
+frida -U -f com.example.myapplication -l frida-android-repinning.js --no-paus
 
 
-adb shell am start -n com.vnpay.abbank/com.activity.App
+adb shell am start -n com.example.myapplication/com.activity.App
 
 
-adb shell am broadcast -a com.whereismywifeserver.intent.TEST --es sms_body "test from adb" -n com.whereismywifeserver/.IntentReceiver
+adb shell am broadcast -a com.example.myapplication.intent.TEST --es sms_body "test from adb" -n com.example.myapplication/.IntentReceiver
 adb shell am broadcast -n package/.Receiver
 -a action
 -es value + param
