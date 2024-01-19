@@ -55,6 +55,7 @@ checkVersion() {
         rpm -qa --last 
     # elif [[ "$(lsb_release -is)" == *"Kali"* ]]; then
     elif [[ -f "/var/log/dpkg.log" ]]; then
+        rpm -qa
         grep -i "install" /var/log/dpkg.log 
     elif [[ -f "/var/log/pacman.log" ]]; then
         awk '/\[ALPM\] installed/ ' /var/log/pacman.log
@@ -94,6 +95,24 @@ getUserUsingSSH(){
     grep AllowUsers /etc/ssh/sshd_config
 }
 
+getCrontab(){
+    echo '--------------------------------------------------' 
+    echo 'LIST CRONTAB' 
+    echo '--------------------------------------------------'
+
+    crontab -l
+}
+
+getNetworkInfo(){
+    echo '--------------------------------------------------' 
+    echo 'LIST NETWORK INFOMATION' 
+    echo '--------------------------------------------------'
+
+    ifconfig
+    ip addr
+    netstat -i
+}
+
 if [ "$1" == "-h" ]; then
     echo "This script must be run with super-user privileges."
     echo "Usage: ./tachi.sh audit | tee output.txt"
@@ -110,6 +129,8 @@ elif [ "$1" == "audit" ]; then
     checkLogSize
     echo ' '
     getUserUsingSSH
+    echo ' '
+    getCrontab
 else
    echo "Try '-h' for more information" 
 fi
