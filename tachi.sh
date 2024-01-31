@@ -59,6 +59,8 @@ checkVersion() {
         grep -i "install" /var/log/dpkg.log 
     elif [[ -f "/var/log/pacman.log" ]]; then
         awk '/\[ALPM\] installed/ ' /var/log/pacman.log
+    elif [ "$(uname)" != "FreeBSD" ]; then
+        pkg info  
     else
         echo 'not found installed';
     fi
